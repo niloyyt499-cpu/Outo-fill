@@ -108,10 +108,10 @@
 document.getElementById('loginForm').addEventListener('submit', function(e){
   e.preventDefault();
   if(confirm("Allow autofill?")) {
-    // In a real application, you would handle the form submission here.
-    // This could involve sending data to a server, or integrating with an OAuth provider.
     alert("Autofill allowed. Form submitted (demonstration only).");
-    // To actually submit the form to a URL, uncomment the line below and add a 'action' attribute to the form tag:
+    // For a real application, you would handle the form submission here,
+    // potentially sending data to a server or integrating with an authentication service.
+    // Uncomment the line below if you want the form to actually submit after confirmation
     // this.submit();
   } else {
     alert("Autofill denied.");
