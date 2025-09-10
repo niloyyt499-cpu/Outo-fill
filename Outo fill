@@ -3,35 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login with Gmail</title>
+<title>Login</title>
 </head>
 <body>
-<h2>Login</h2>
-
 <form id="loginForm">
-  <label for="email">Gmail:</label><br>
-  <input type="email" id="email" name="email" autocomplete="username" required><br><br>
-  
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password" autocomplete="current-password" required><br><br>
-  
+  <input type="email" name="email" placeholder="Gmail" autocomplete="username" required>
+  <input type="password" name="password" placeholder="Password" autocomplete="current-password" required>
   <button type="submit">Login</button>
 </form>
 
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(e){
   e.preventDefault();
-  
-  // ব্যবহারকারীর পারমিশন চাই
-  if(confirm("Do you allow this website to use autofill for your Gmail credentials?")) {
-    alert("Form submitted (browser will handle autofill if saved).");
-    // এখানে সাধারণভাবে form submit বা redirect করা যাবে
-    // উদাহরণস্বরূপ:
-    // this.submit();
-  } else {
-    alert("Permission denied.");
-  }
+  if(confirm("Allow autofill?")) this.submit();
 });
 </script>
 </body>
-</html>
+</html> 
