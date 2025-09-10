@@ -4,10 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box; /* Padding and border included in width */
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #aaa;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 600px) {
+    form {
+      margin: 20px; /* Add some margin on smaller screens */
+    }
+  }
+</style>
 </head>
 <body>
 <form id="loginForm">
-  <input type="email" name="email" placeholder="Gmail" autocomplete="username" required>
+  <input type="email" name="email" placeholder="Email" autocomplete="username" required>
   <input type="password" name="password" placeholder="Password" autocomplete="current-password" required>
   <button type="submit">Login</button>
 </form>
@@ -15,8 +70,16 @@
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(e){
   e.preventDefault();
-  if(confirm("Allow autofill?")) this.submit();
+  // Simplified for demonstration. In a real application, you'd likely want more robust handling.
+  if(confirm("Allow autofill?")) {
+    // For a real application, you would handle the form submission here,
+    // potentially sending data to a server or integrating with an authentication service.
+    alert("Autofill allowed. Form submitted (demonstration only).");
+    // this.submit(); // Uncomment this line if you want the form to actually submit after confirmation
+  } else {
+    alert("Autofill denied.");
+  }
 });
 </script>
 </body>
-</html> 
+</html>
